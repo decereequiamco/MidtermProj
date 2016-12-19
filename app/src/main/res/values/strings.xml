@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NewsFeed</string>
+    <string name="base_api">http://content.guardianapis.com/search?api-key=test</string>
+</resources>
