@@ -1,6 +1,6 @@
-package com.jerryshao.newsfeed.dataUtil;
+package com.quiamco.midtermproject.dataUtil;
 
-import com.jerryshao.newsfeed.model.News;
+import com.quiamco.midtermproject.model.News;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,7 +14,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Jerryshao on 2016/12/19.

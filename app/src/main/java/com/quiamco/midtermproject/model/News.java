@@ -1,8 +1,6 @@
-package com.jerryshao.newsfeed.model;
+package com.quiamco.midtermproject.model;
 
-/**
- * Created by Jerryshao on 2016/12/19.
- */
+
 
 public class News {
     private String title;

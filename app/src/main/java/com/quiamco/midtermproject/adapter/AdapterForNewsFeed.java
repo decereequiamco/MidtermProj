@@ -1,4 +1,4 @@
-package com.jerryshao.newsfeed.adapter;
+package com.quiamco.midtermproject.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,23 +8,20 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.jerryshao.newsfeed.R;
-import com.jerryshao.newsfeed.model.News;
+import com.quiamco.midtermproject.R;
+import com.quiamco.midtermproject.model.News;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Jerryshao on 2016/12/19.
- */
 
-public class NewsAdapter extends ArrayAdapter<News> {
+
+public class AdapterForNewsFeed extends ArrayAdapter<News> {
     private int viewId;
 
-    public NewsAdapter(Context context, int resource, List<News> news) {
+    public AdapterForNewsFeed(Context context, int resource, List<News> news) {
         super(context, resource, news);
         viewId = resource;
     }

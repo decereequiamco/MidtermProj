@@ -1,4 +1,4 @@
-package com.jerryshao.newsfeed;
+package com.quiamco.midtermproject;
 
 import android.app.LoaderManager;
 import android.content.Context;
@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.jerryshao.newsfeed.adapter.NewsAdapter;
-import com.jerryshao.newsfeed.model.News;
+import com.quiamco.midtermproject.adapter.AdapterForNewsFeed;
+import com.quiamco.midtermproject.model.News;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,18 +24,18 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>>{
     public static final int NEWS_LOADER_ID = 1;
-    @BindView(R.id.news_list_view)
+    @BindView(com.quiamco.midtermproject.R.id.news_list_view)
     public ListView newsListView;
-    private NewsAdapter newsAdapter;
+    private AdapterForNewsFeed adapterForNewsFeed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(com.quiamco.midtermproject.R.layout.activity_main);
         ButterKnife.bind(this);
 
-        newsAdapter = new NewsAdapter(this, R.layout.news_list_item, new ArrayList<News>());
-        newsListView.setAdapter(newsAdapter);
+        adapterForNewsFeed = new AdapterForNewsFeed(this, com.quiamco.midtermproject.R.layout.news_list_item, new ArrayList<News>());
+        newsListView.setAdapter(adapterForNewsFeed);
 
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
-        return new NewsLoader(this, getString(R.string.base_api));
+        return new NewsLoader(this, getString(com.quiamco.midtermproject.R.string.base_api));
     }
 
     @Override
@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             return;
         }
 
-        newsAdapter.clear();
-        newsAdapter.addAll(data);
+        adapterForNewsFeed.clear();
+        adapterForNewsFeed.addAll(data);
     }
 
     @Override
     public void onLoaderReset(android.content.Loader<List<News>> loader) {
-        newsAdapter.clear();
+        adapterForNewsFeed.clear();
     }
 }

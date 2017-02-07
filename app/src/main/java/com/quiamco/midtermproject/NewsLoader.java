@@ -1,16 +1,13 @@
-package com.jerryshao.newsfeed;
+package com.quiamco.midtermproject;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
 
-import com.jerryshao.newsfeed.dataUtil.QueryUtils;
-import com.jerryshao.newsfeed.model.News;
+import com.quiamco.midtermproject.dataUtil.QueryUtils;
+import com.quiamco.midtermproject.model.News;
 
 import java.util.List;
 
-/**
- * Created by Jerryshao on 2016/12/19.
- */
 
 public class NewsLoader extends AsyncTaskLoader<List<News>> {
     private String url;
